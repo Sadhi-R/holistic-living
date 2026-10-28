@@ -122,7 +122,6 @@ function renderPage(page) {
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
       <nav id="site-nav" class="nav" aria-label="Primary">
         ${nav}
-        <a class="btn btn-solid" href="/contact">Enquire</a>
       </nav>
     </div>
   </header>
