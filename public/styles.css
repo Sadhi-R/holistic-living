@@ -7,8 +7,8 @@
   --cream: #f3eee6;
   --paper: #fbf8f3;
   --sand: #e4d5c1;
-  --clay: #9d5340;
-  --clay-deep: #7d3e2e;
+  --clay: #8a3f2c;
+  --clay-deep: #6b2f21;
   --muted: #5c675f;
   --line: rgba(28, 40, 34, 0.12);
   --shadow: 0 24px 60px rgba(22, 48, 40, 0.12);
@@ -157,13 +157,20 @@ a { color: var(--forest); text-underline-offset: 0.18em; }
 
 .btn:hover { transform: translateY(-1px); }
 
-.btn-solid { background: var(--forest); color: #fbf8f3; }
-.btn-solid:hover { background: var(--forest-deep); color: white; }
-.btn-clay { background: var(--clay); color: white; }
-.btn-clay:hover { background: var(--clay-deep); color: white; }
-.btn-line { background: transparent; border-color: rgba(255,255,255,0.45); color: white; }
+.btn-solid { background: var(--forest); color: #fbf8f3; box-shadow: 0 10px 24px rgba(22, 48, 40, 0.18); }
+.btn-solid:hover { background: var(--forest-deep); color: #ffffff; }
+.btn-clay { background: var(--clay); color: #ffffff; box-shadow: 0 10px 24px rgba(107, 47, 33, 0.2); }
+.btn-clay:hover { background: var(--clay-deep); color: #ffffff; }
+.btn-line { background: transparent; border-color: rgba(255,255,255,0.55); color: #ffffff; }
 .btn-line-dark { background: transparent; border-color: var(--forest); color: var(--forest); }
-.btn[disabled] { opacity: 0.65; cursor: progress; transform: none; }
+.btn-line-dark:hover { background: var(--forest); color: #fbf8f3; }
+.nav .btn-solid {
+  color: #fbf8f3;
+  padding: 0.7rem 1.05rem;
+  font-size: 0.9rem;
+  box-shadow: 0 8px 18px rgba(22, 48, 40, 0.22);
+}
+.btn[disabled] { opacity: 0.65; cursor: progress; transform: none; box-shadow: none; }
 
 .hero {
   display: grid;
@@ -225,9 +232,11 @@ h1, h2, h3 { line-height: 1.15; font-weight: 600; letter-spacing: -0.03em; }
 
 .hero-media > img {
   width: 100%;
-  height: min(38rem, 72vh);
+  aspect-ratio: 3 / 4;
+  height: auto;
+  max-height: min(38rem, 72vh);
   object-fit: cover;
-  object-position: center 18%;
+  object-position: center 12%;
   border-radius: 32px 32px 80px 32px;
   box-shadow: var(--shadow);
 }
@@ -251,7 +260,7 @@ h1, h2, h3 { line-height: 1.15; font-weight: 600; letter-spacing: -0.03em; }
   height: 4.2rem;
   border-radius: 14px;
   object-fit: cover;
-  object-position: center top;
+  object-position: center 8%;
   box-shadow: none;
 }
 
@@ -290,9 +299,11 @@ h1, h2, h3 { line-height: 1.15; font-weight: 600; letter-spacing: -0.03em; }
 
 .split img {
   width: 100%;
-  height: 28rem;
+  aspect-ratio: 4 / 5;
+  height: auto;
+  max-height: 32rem;
   object-fit: cover;
-  object-position: center 16%;
+  object-position: center 14%;
   border-radius: 28px;
 }
 
@@ -364,7 +375,7 @@ h1, h2, h3 { line-height: 1.15; font-weight: 600; letter-spacing: -0.03em; }
   flex-direction: column;
 }
 
-.session img { width: 100%; height: 14rem; object-fit: cover; }
+.session img { width: 100%; height: 14rem; object-fit: cover; object-position: center 35%; }
 .session div { padding: 1.2rem 1.25rem 1.35rem; }
 .session h3 { margin: 0.35rem 0; font-size: 1.45rem; }
 .pill {
@@ -392,9 +403,11 @@ h1, h2, h3 { line-height: 1.15; font-weight: 600; letter-spacing: -0.03em; }
 
 .mentor-band img {
   width: 100%;
-  height: 22rem;
+  aspect-ratio: 3 / 4;
+  height: auto;
+  max-height: 24rem;
   object-fit: cover;
-  object-position: center top;
+  object-position: center 10%;
   border-radius: 22px;
 }
 
@@ -453,7 +466,7 @@ h1, h2, h3 { line-height: 1.15; font-weight: 600; letter-spacing: -0.03em; }
   gap: 1rem;
 }
 .gallery-grid figure { margin: 0; }
-.gallery-grid img { width: 100%; height: 18rem; object-fit: cover; border-radius: 20px; }
+.gallery-grid img { width: 100%; height: 18rem; object-fit: cover; object-position: center 28%; border-radius: 20px; }
 .gallery-grid figcaption { margin-top: 0.45rem; color: var(--muted); font-size: 0.9rem; }
 .gallery {
   display: grid;
@@ -595,10 +608,10 @@ textarea { min-height: 9rem; resize: vertical; }
   .people { grid-template-columns: 1fr 1fr; }
   .outcomes { grid-template-columns: 1fr; }
   .fact-row, .word-row { grid-template-columns: 1fr; }
-  .hero-media > img, .split img { height: 22rem; }
+  .hero-media > img, .split img { max-height: 22rem; }
   .portrait-card { left: 0.8rem; }
   .cta-band { flex-direction: column; align-items: flex-start; }
-  .mentor-band img { height: 20rem; }
+  .mentor-band img { max-height: 20rem; }
 }
 
 @media (max-width: 760px) {
