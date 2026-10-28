@@ -1,0 +1,76 @@
+---
+title: Contact | Holistic Living
+description: Contact Holistic Living. Call +91 79810 88978, WhatsApp +91 80960 80360, or email ecs.sampathkumar@gmail.com.
+path: /contact
+image: /images/sampath.jpg
+---
+<section class="wrap page-hero">
+  <p class="crumbs"><a href="/">Home</a> / Contact</p>
+  <p class="eyebrow">Contact</p>
+  <h1>Ask about a workshop.</h1>
+  <p class="lede">Send a note and the team will reply. If the form cannot send email yet, the page will say so. Call or WhatsApp in the meantime.</p>
+</section>
+<section class="wrap contact-layout">
+  <aside class="panel contact-card">
+    <h2>Holistic Living</h2>
+    <p>Mentor {{mentor}}, {{role}}.</p>
+    <p><a href="tel:{{phoneTel}}">Call {{phone}}</a></p>
+    <p><a href="{{whatsappUrl}}" target="_blank" rel="noopener noreferrer">WhatsApp {{whatsapp}}</a></p>
+    <p><a href="mailto:{{email}}">{{email}}</a></p>
+    <h2>Offline venue</h2>
+    <p>Mythri Yoga &amp; Nature Cure Centre<br />Hi Tech Colony, Mancherial – 504208<br />Telangana</p>
+    <p class="help">The 25 October 2026 session at this address has been held. It is listed so visitors can recognise the venue, not as an open booking.</p>
+  </aside>
+  <form class="panel" id="enquiry-form" action="/api/contact" method="post" novalidate data-contact-form>
+    <p class="status" id="form-status" hidden></p>
+    <div class="field">
+      <label for="fullName">Full name</label>
+      <input id="fullName" name="fullName" type="text" autocomplete="name" required maxlength="80" />
+      <p class="error" id="err-fullName" hidden></p>
+    </div>
+    <div class="field">
+      <label for="email">Email address</label>
+      <input id="email" name="email" type="email" autocomplete="email" required maxlength="120" />
+      <p class="error" id="err-email" hidden></p>
+    </div>
+    <div class="field">
+      <label for="phone">Phone number</label>
+      <input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required maxlength="24" placeholder="+91 98765 43210" />
+      <p class="help">Indian mobile numbers, or an international number starting with +.</p>
+      <p class="error" id="err-phone" hidden></p>
+    </div>
+    <div class="field">
+      <label for="enquiry">Enquiry type</label>
+      <select id="enquiry" name="enquiry" required>
+        <option value="mental-mastery">Mental Mastery workshop</option>
+        <option value="gratitude-journal">66-day gratitude journal</option>
+        <option value="group">Workshop for a group or organisation</option>
+        <option value="general" selected>General enquiry</option>
+      </select>
+      <p class="error" id="err-enquiry" hidden></p>
+    </div>
+    <div class="field">
+      <label for="message">Message</label>
+      <textarea id="message" name="message" required maxlength="4000" placeholder="Tell us what you would like to know."></textarea>
+      <p class="error" id="err-message" hidden></p>
+    </div>
+    <div class="field">
+      <label class="check" for="consent">
+        <input id="consent" name="consent" type="checkbox" value="yes" required />
+        <span>I agree that Holistic Living may use these details to reply to this enquiry, as described in the <a href="/privacy">privacy policy</a>.</span>
+      </label>
+      <p class="error" id="err-consent" hidden></p>
+    </div>
+    <div class="hp" aria-hidden="true">
+      <label for="hp_token">Leave this field empty</label>
+      <input id="hp_token" name="hp_token" type="text" tabindex="-1" autocomplete="off" />
+    </div>
+    <input type="hidden" name="startedAt" value="" />
+    <div class="form-actions">
+      <button class="btn btn-solid" type="submit"><span class="spinner" hidden></span><span class="submit-label">Send enquiry</span></button>
+      <p class="help">Or <a href="{{whatsappUrl}}">WhatsApp {{whatsapp}}</a></p>
+    </div>
+    <noscript><p class="help">This form uses a short script to send your message. If scripts are blocked, call {{phone}} or email {{email}}.</p></noscript>
+  </form>
+</section>
+<script src="/js/contact.js" defer></script>
