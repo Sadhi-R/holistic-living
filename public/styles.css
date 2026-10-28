@@ -223,10 +223,11 @@ h1, h2, h3 { line-height: 1.15; font-weight: 600; letter-spacing: -0.03em; }
 
 .hero-media { position: relative; }
 
-.hero-media img {
+.hero-media > img {
   width: 100%;
   height: min(38rem, 72vh);
   object-fit: cover;
+  object-position: center 18%;
   border-radius: 32px 32px 80px 32px;
   box-shadow: var(--shadow);
 }
@@ -291,6 +292,7 @@ h1, h2, h3 { line-height: 1.15; font-weight: 600; letter-spacing: -0.03em; }
   width: 100%;
   height: 28rem;
   object-fit: cover;
+  object-position: center 16%;
   border-radius: 28px;
 }
 
@@ -593,7 +595,7 @@ textarea { min-height: 9rem; resize: vertical; }
   .people { grid-template-columns: 1fr 1fr; }
   .outcomes { grid-template-columns: 1fr; }
   .fact-row, .word-row { grid-template-columns: 1fr; }
-  .hero-media img, .split img { height: 22rem; }
+  .hero-media > img, .split img { height: 22rem; }
   .portrait-card { left: 0.8rem; }
   .cta-band { flex-direction: column; align-items: flex-start; }
   .mentor-band img { height: 20rem; }
