@@ -1,3 +1,6 @@
+const whatsappGroupUrl =
+  'https://chat.whatsapp.com/FYN5uO1TqPN1BCLjXB0Sdi?s=qt&p=a&mlu=4&ilr=4&iam=2';
+
 export const site = {
   name: 'Holistic Living',
   tagline: 'Mental Mastery',
@@ -7,6 +10,8 @@ export const site = {
   phoneTel: '+917981088978',
   whatsappDisplay: '+91 80960 80360',
   whatsappUrl: 'https://wa.me/918096080360',
+  whatsappGroupUrl,
+  whatsappGroupQr: '/images/whatsapp-group-qr.png',
   email: 'ecs.sampathkumar@gmail.com',
   mentor: 'Sampath Kumar',
   mentorRole: 'Growth Mindset Mentor',
@@ -45,7 +50,7 @@ export const site = {
     { value: 'group', label: 'Workshop for a group or organisation' },
     { value: 'general', label: 'General enquiry' },
   ],
-  socials: [],
+  socials: [{ label: 'WhatsApp group', href: whatsappGroupUrl }],
   footerNote: 'Educational workshops and mentoring. A registered business name, address, and tax details are not published on this site yet.',
   footerBlurb:
     'NLP-based personal development with Sampath Kumar, Growth Mindset Mentor. Workshops on inner life, mindset, and self-awareness.',

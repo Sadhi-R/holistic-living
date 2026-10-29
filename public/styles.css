@@ -204,6 +204,31 @@ h1, h2, h3 { line-height: 1.15; font-weight: 600; letter-spacing: -0.03em; }
 
 .hero-actions { display: flex; flex-wrap: wrap; gap: 0.7rem; margin: 1.4rem 0 1.2rem; }
 
+.wa-join {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 2rem;
+  align-items: center;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.5rem 1.5rem 1.5rem 1.8rem;
+}
+.wa-join h2 {
+  margin: 0 0 0.55rem;
+  color: var(--forest-deep);
+  font-size: clamp(1.6rem, 3vw, 2.3rem);
+}
+.wa-join p { margin: 0 0 1.15rem; color: var(--muted); max-width: 36rem; }
+.wa-join figure { margin: 0; }
+.wa-join img {
+  width: min(100%, 24rem);
+  height: auto;
+  margin-inline: auto;
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+}
+
 .fact-row {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -662,6 +687,6 @@ textarea { min-height: 9rem; resize: vertical; }
     align-items: flex-start;
   }
   .nav.open { display: flex; }
-  .people, .areas article { grid-template-columns: 1fr; }
+  .people, .areas article, .wa-join { grid-template-columns: 1fr; }
   .page-hero h1 { max-width: none; }
 }

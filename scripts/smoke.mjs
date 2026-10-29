@@ -39,6 +39,12 @@ try {
     if (html.includes('10xwealthcreators@gmail.com') || html.includes('+91 88978 68747')) {
       throw new Error(`${item} contains Business Startup School contact details`);
     }
+    if ((item === '/' || item === '/contact') && !html.includes('https://chat.whatsapp.com/FYN5uO1TqPN1BCLjXB0Sdi')) {
+      throw new Error(`${item} is missing the WhatsApp group link`);
+    }
+    if ((item === '/' || item === '/contact') && !html.includes('/images/whatsapp-group-qr.png')) {
+      throw new Error(`${item} is missing the WhatsApp group QR`);
+    }
   }
   const missing = await fetch(`http://127.0.0.1:${port}/missing-page`);
   if (missing.status !== 404) throw new Error('missing page was not a 404');

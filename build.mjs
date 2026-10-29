@@ -64,6 +64,8 @@ function fill(value) {
     .replaceAll('{{phoneTel}}', site.phoneTel)
     .replaceAll('{{whatsapp}}', site.whatsappDisplay)
     .replaceAll('{{whatsappUrl}}', site.whatsappUrl)
+    .replaceAll('{{whatsappGroupUrl}}', escapeHtml(site.whatsappGroupUrl))
+    .replaceAll('{{whatsappGroup}}', whatsappGroup())
     .replaceAll('{{email}}', site.email)
     .replaceAll('{{mentor}}', site.mentor)
     .replaceAll('{{role}}', site.mentorRole)
@@ -156,6 +158,21 @@ function sitemap(urls) {
     .map((url) => `  <url><loc>${escapeHtml(url)}</loc></url>`)
     .join('\n');
   return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${body}\n</urlset>\n`;
+}
+
+function whatsappGroup() {
+  const href = escapeHtml(site.whatsappGroupUrl);
+  return `<div class="wa-join">
+  <div>
+    <p class="eyebrow">WhatsApp group</p>
+    <h2>Join the Mental Mastery group.</h2>
+    <p>Scan the code with the WhatsApp camera, or open the group on this phone or computer. Joining the group is a conversation, not a confirmed seat.</p>
+    <a class="btn btn-solid" href="${href}" target="_blank" rel="noopener noreferrer">Join the WhatsApp group</a>
+  </div>
+  <figure>
+    <img src="${escapeHtml(site.whatsappGroupQr)}" width="900" height="1600" alt="QR code for the Holistic Living Mental Mastery Workshop WhatsApp group. Scan it with the WhatsApp camera to join." loading="lazy" />
+  </figure>
+</div>`;
 }
 
 function contactIcons() {
